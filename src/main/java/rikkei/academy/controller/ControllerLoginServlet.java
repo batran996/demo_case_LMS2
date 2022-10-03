@@ -10,13 +10,13 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(value = {"/", "/loginServlet"})
+@WebServlet(value = {"/","/loginServlet"})
 public class ControllerLoginServlet extends HttpServlet {
     IUserService userService = new UserServiceIMPL();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("view/login/login.jsp");
+        response.sendRedirect("/view/login/login.jsp");
     }
 
     @Override
