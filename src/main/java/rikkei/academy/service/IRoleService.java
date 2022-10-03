@@ -1,5 +1,0 @@
-package rikkei.academy.service;
-
-public interface IRoleService {
-
-}
