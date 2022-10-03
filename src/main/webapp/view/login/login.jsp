@@ -19,6 +19,7 @@
 </head>
 <body>
 <form action="loginServlet" method="post">
+    <input type="hidden" name="action" value="register">
     <div class="screen-1">
         <svg class="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="300" height="300" viewbox="0 0 640 480" xml:space="preserve">
     <g transform="matrix(3.31 0 0 3.31 320.4 240.4)">
@@ -59,7 +60,7 @@
             </div>
         </div>
         <button class="login">Đăng Nhập </button>
-        <div class="footer"><button>Đăng ký</button><button>Quên Mật Khẩu</button></div>
+        <div class="footer"><a href="/loginServlet?action=dangky"><button type="button">Đăng ký</button></a><button>Quên Mật Khẩu</button></div>
     </div>
 
 </form>

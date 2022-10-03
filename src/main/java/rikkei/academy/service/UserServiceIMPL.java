@@ -11,13 +11,15 @@ import java.sql.SQLException;
 public class UserServiceIMPL implements IUserService {
     private static Connection connection = ConnectSQL.getConnection();
     private static final String CHECK_USER = "select * from databaseUSER where username = ? and password =?";
+    private static final String ADD_USER = "insert into databaseUSER (username,password,role) values (?,?,'user')";
+
 
     @Override
     public User findByUserNameAndPass(String userName, String password) {
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(CHECK_USER);
-            preparedStatement.setString(1,userName);
-            preparedStatement.setString(2,password);
+            preparedStatement.setString(1, userName);
+            preparedStatement.setString(2, password);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
 
@@ -33,5 +35,19 @@ public class UserServiceIMPL implements IUserService {
 
         return null;
     }
+
+    @Override
+    public void addUser(String userName, String password) {
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(ADD_USER);
+            preparedStatement.setString(1, userName);
+            preparedStatement.setString(2, password);
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 
 }
