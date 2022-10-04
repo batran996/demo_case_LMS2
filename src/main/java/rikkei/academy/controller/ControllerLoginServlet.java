@@ -15,9 +15,6 @@ public class ControllerLoginServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-<<<<<<< HEAD
-        response.sendRedirect("/view/login/login.jsp");
-=======
         String action= request.getParameter("action");
         if (action == null){
             action = "";
@@ -27,10 +24,11 @@ public class ControllerLoginServlet extends HttpServlet {
             case "dangky":
                 fromDangKy(request,response);
                 break;
+
         }
 
         response.sendRedirect("view/login/login.jsp");
->>>>>>> 71f8b1cb78d1ab1995f33bc2d23cdafd2b514928
+
     }
 
     private void fromDangKy(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -54,14 +52,11 @@ public class ControllerLoginServlet extends HttpServlet {
             case "register":
                 actionRegister(request,response);
                 break;
+
+
         }
-
-
-
-
-
-
     }
+
 
     private void actionRegister(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String nameUser = request.getParameter("user");
