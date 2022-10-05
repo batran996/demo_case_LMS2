@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <html>
 <head>
     <title>admin</title>
@@ -88,6 +89,9 @@
             }
         }
 
+        body{
+            background-image: url("/img/dexx.jpg");
+        }
 
         @media screen and (max-width: 768px) {
             body {
@@ -189,12 +193,13 @@
 
     </style>
 <body>
-<h1 style="text-align: center;color: mediumpurple" >WELLCOME HOME ADMIN HBT</h1>
+<h1>Test image</h1>
+<img src="/img/dexx.jpg" alt="test">
 <form action="loginServlet" method="post">
     <input type="hidden" name="action" value="home">
     <nav>
         <div class="logo">
-            <h2 style="color: red">ADMIN</h2>
+            <h1 style="text-align: center;color: red; " >HOME ADMIN HBT</h1>
         </div>
         <ul class="nav-links">
 
@@ -265,6 +270,7 @@
         }
         navSile();
     </script>
+
 </form>
 </body>
 </html>

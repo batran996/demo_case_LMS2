@@ -27,7 +27,8 @@ public class ControllerLoginServlet extends HttpServlet {
 
         }
 
-        response.sendRedirect("view/login/login.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("view/login/login.jsp");
+        rd.forward(request,response);
 
     }
 
